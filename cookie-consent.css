@@ -1,0 +1,319 @@
+/* 
+  Cookie Consent Component - Self-Contained
+  Includes all necessary fonts and styles.
+*/
+
+/* Font faces */
+@font-face {
+  font-family: 'Comico-Regular';
+  src: url('./fonts/comico/Comico-Regular.woff2') format('woff2'),
+       url('./fonts/comico/Comico-Regular.woff') format('woff'),
+       url('./fonts/comico/Comico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Array';
+  src: url('./fonts/array/Array-Regular.woff2') format('woff2'),
+       url('./fonts/array/Array-Regular.woff') format('woff'),
+       url('./fonts/array/Array-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Cookie Consent Styles */
+:root {
+  --ck-bg: #edf1e8;
+  --ck-bg2: #d7dbd2;
+  --ck-fg: #141414;
+  --ck-a1: #ed6a5a;
+  --ck-a2: #f4f1bb;
+  --ck-a3: #9bc1bc;
+  --ck-a4: #5d576b;
+  --ck-a2-muted: #9e9c79;
+}
+
+.ck-wrap {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  /* Anchored to the bottom rather than centered! */
+  justify-content: flex-end;
+  /* Horizontal alignment */
+  padding: 3vh 2vw;
+  /* Scalable vh/vw padding boundaries */
+  background: transparent;
+  /* Drop rigid preview background to sit cleanly overlaid */
+  pointer-events: none;
+  /* Let underlying page be interactive while overlay is 100svh */
+  z-index: 9999;
+}
+
+.ck-ticket {
+  pointer-events: auto;
+  display: flex;
+  width: 24.5vw;
+  border-radius: 1vw;
+  position: relative;
+  -webkit-mask: radial-gradient(circle 0.52vw at 78% 0, transparent 0.52vw, #000 0.56vw) top left / 100% 51% no-repeat,
+    radial-gradient(circle 0.52vw at 78% 100%, transparent 0.52vw, #000 0.56vw) bottom left / 100% 51% no-repeat;
+  mask: radial-gradient(circle 0.52vw at 78% 0, transparent 0.52vw, #000 0.56vw) top left / 100% 51% no-repeat,
+    radial-gradient(circle 0.52vw at 78% 100%, transparent 0.52vw, #000 0.56vw) bottom left / 100% 51% no-repeat;
+}
+
+.ck-main {
+  flex: 0 0 78%;
+  background: var(--ck-fg);
+  padding: 1.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1vw;
+}
+
+.ck-stub {
+  flex: 0 0 22%;
+  background: var(--ck-a4);
+  padding: 0.6vw 0.7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ck-tear {
+  flex: 0 0 0px;
+  position: relative;
+  z-index: 10;
+}
+
+.ck-tear::after {
+  content: "";
+  position: absolute;
+  top: 0.4vw;
+  bottom: 0.4vw;
+  left: -0.04vw;
+  width: 0;
+  border-left: 0.1vw dashed var(--ck-a3);
+}
+
+.ck-tear svg {
+  display: none;
+}
+
+.ck-label {
+  font-size: clamp(10px, 0.56vw, 14px);
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--ck-a3);
+  text-transform: uppercase;
+  font-family: 'Comico-Regular', sans-serif;
+}
+
+.ck-val {
+  font-size: clamp(11px, 0.68vw, 16px);
+  color: var(--ck-bg2);
+  font-family: 'Comico-Regular', sans-serif;
+}
+
+.ck-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25vw;
+  align-items: stretch;
+  margin-bottom: 0.2vw;
+}
+
+.ck-bar {
+  height: 0.22vw;
+}
+
+.ck-btns {
+  display: flex;
+  gap: 0.4vw;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ck-btn-accept {
+  background: var(--ck-a1);
+  color: #fff;
+  border: 0.12vw solid var(--ck-a1);
+  border-radius: 0.4vw;
+  padding: 0.52vw 1.04vw;
+  font-size: clamp(12px, 0.8vw, 18px);
+  font-weight: 500;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: 'Array', sans-serif;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.ck-btn-accept:hover {
+  background: transparent;
+  color: var(--ck-a1);
+}
+
+.ck-btn-accept:focus-visible {
+  outline: 3px solid var(--ck-a1);
+  outline-offset: 2px;
+  background: transparent;
+  color: var(--ck-a1);
+}
+
+.ck-btn-manage {
+  background: var(--ck-a3);
+  color: #141414;
+  border: 0.12vw solid var(--ck-a3);
+  border-radius: 0.4vw;
+  padding: 0.52vw 1.04vw;
+  font-size: clamp(12px, 0.8vw, 18px);
+  font-weight: 500;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: 'Array', sans-serif;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.ck-btn-manage:hover {
+  background: transparent;
+  color: var(--ck-a3);
+}
+
+.ck-btn-manage:focus-visible {
+  outline: 3px solid var(--ck-a3);
+  outline-offset: 2px;
+  background: transparent;
+  color: var(--ck-a3);
+}
+
+.ck-btn-decline {
+  background: var(--ck-a2-muted);
+  color: #141414;
+  border: 0.12vw solid var(--ck-a2-muted);
+  border-radius: 0.4vw;
+  padding: 0.52vw 1.04vw;
+  font-size: clamp(12px, 0.8vw, 18px);
+  font-weight: 500;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: 'Array', sans-serif;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.ck-btn-decline:hover {
+  background: transparent;
+  color: var(--ck-a2);
+  border-color: var(--ck-a2);
+}
+
+.ck-btn-decline:focus-visible {
+  outline: 3px solid var(--ck-a2);
+  outline-offset: 2px;
+  background: transparent;
+  color: var(--ck-a2);
+  border-color: var(--ck-a2);
+}
+
+.ck-accepted {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 20, 20, 0.93);
+  border-radius: 1vw;
+  text-align: center;
+}
+
+.ck-stub-title {
+  font-size: clamp(11px, 0.68vw, 16px);
+  font-weight: 500;
+  color: var(--ck-a2);
+  letter-spacing: .08em;
+  line-height: 1.5;
+  word-break: break-word;
+  font-family: 'Comico-Regular', sans-serif;
+}
+
+.ck-stub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1vw;
+}
+
+.ck-stub-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vw;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ck-ticket {
+    width: 90vw;
+    max-width: calc(100vw - 20px);
+    border-radius: 0.6vw;
+    -webkit-mask: radial-gradient(circle 0.4vw at 78% 0, transparent 0.4vw, #000 0.44vw) top left / 100% 51% no-repeat,
+      radial-gradient(circle 0.4vw at 78% 100%, transparent 0.4vw, #000 0.44vw) bottom left / 100% 51% no-repeat;
+    mask: radial-gradient(circle 0.4vw at 78% 0, transparent 0.4vw, #000 0.44vw) top left / 100% 51% no-repeat,
+      radial-gradient(circle 0.4vw at 78% 100%, transparent 0.4vw, #000 0.44vw) bottom left / 100% 51% no-repeat;
+  }
+
+  .ck-main {
+    padding: 1vw;
+    gap: 0.8vw;
+  }
+
+  .ck-stub {
+    padding: 0.5vw 0.6vw;
+  }
+
+  .ck-tear::after {
+    top: 0.3vw;
+    bottom: 0.3vw;
+    border-left: 0.08vw dashed var(--ck-a3);
+  }
+}
+
+@media (max-width: 480px) {
+  .ck-wrap {
+    padding: 2vh 1vw;
+  }
+
+  .ck-ticket {
+    width: calc(100vw - 10px);
+  }
+
+  .ck-main {
+    padding: 0.8vw;
+  }
+
+  .ck-btns {
+    gap: 0.3vw;
+    flex-direction: column;
+  }
+
+  .ck-btn-accept,
+  .ck-btn-manage,
+  .ck-btn-decline {
+    width: 100%;
+    padding: 0.6vw 1vw;
+  }
+}
