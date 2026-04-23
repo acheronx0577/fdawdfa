@@ -1,0 +1,103 @@
+/* Responsive font sizes - scales with viewport */
+/* contact - hero */
+
+.contact {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  padding: clamp(0.8em, 3vw, 2.5em);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  overflow: hidden;
+  gap: clamp(2em, 5vw, 4em);
+  text-align: center;
+}
+
+.contact nav {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.contact-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.3em, 1vw, 0.6em);
+  pointer-events: none;
+  width: 100%;
+  max-width: 90vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card a {
+  pointer-events: auto;
+}
+
+.contact .contact-card-header-main {
+  margin-bottom: clamp(1.5em, 5vw, 7em);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8em, 2vw, 1.2em);
+  max-width: min(600px, 90vw);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Allow natural wrapping and improve readability */
+.contact .contact-card-header-main p {
+  max-width: 100%;
+  width: auto;
+  font-family: "Technor-Extralight", "Technor", sans-serif;
+  font-size: clamp(0.95rem, 2.5vw, 1.4rem);
+  line-height: 1.2;
+}
+
+.contact h1 {
+  font-size: clamp(2rem, 10vw, 6rem);
+  line-height: 1.2;
+  margin: 0;
+}
+.contact-card .mn {
+  font-size: clamp(0.85rem, 2vw, 1.18rem);
+}
+
+.contact p.contact-card-header {
+  padding: clamp(0.2em, 1vw, 0.4em) clamp(0.5em, 1.5vw, 0.8em);
+  border-radius: 0.25em;
+  width: max-content;
+  background-color: var(--fg);
+  color: var(--bg);
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+}
+
+/* Large screens: restore original side-by-side layout */
+@media (min-width: 1000px) {
+  .contact {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+  }
+
+  .contact .contact-card-header-main {
+    max-width: 600px;
+    margin-bottom: clamp(0.8em, 1.5vw, 2em);
+  }
+  .contact-card {
+    flex-direction: column;
+    width: auto;
+    max-width: none;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+}
+

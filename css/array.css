@@ -1,0 +1,72 @@
+/**
+* @license
+*
+* Font Family: Array
+* Designed by: Frode Helland
+* URL: https://www.fontshare.com/fonts/array
+* © 2026 Indian Type Foundry
+*
+* Array Wide 
+* Array Regular 
+* Array Semibold 
+* Array SemiboldWide 
+* Array BoldWide 
+* Array Bold 
+
+*
+*/
+@font-face {
+  font-family: 'Array';
+  src: url('../public/fonts/array/Array-Regular.woff2') format('woff2'),
+       url('../public/fonts/array/Array-Regular.woff') format('woff'),
+       url('../public/fonts/array/Array-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Wide';
+  src: url('../public/fonts/array/Array-Wide.woff2') format('woff2'),
+       url('../public/fonts/array/Array-Wide.woff') format('woff'),
+       url('../public/fonts/array/Array-Wide.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Semibold';
+  src: url('../public/fonts/array/Array-Semibold.woff2') format('woff2'),
+       url('../public/fonts/array/Array-Semibold.woff') format('woff'),
+       url('../public/fonts/array/Array-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-SemiboldWide';
+  src: url('../public/fonts/array/Array-SemiboldWide.woff2') format('woff2'),
+       url('../public/fonts/array/Array-SemiboldWide.woff') format('woff'),
+       url('../public/fonts/array/Array-SemiboldWide.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-BoldWide';
+  src: url('../public/fonts/array/Array-BoldWide.woff2') format('woff2'),
+       url('../public/fonts/array/Array-BoldWide.woff') format('woff'),
+       url('../public/fonts/array/Array-BoldWide.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Array-Bold';
+  src: url('../public/fonts/array/Array-Bold.woff2') format('woff2'),
+       url('../public/fonts/array/Array-Bold.woff') format('woff'),
+       url('../public/fonts/array/Array-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+

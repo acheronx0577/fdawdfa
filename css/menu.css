@@ -1,0 +1,211 @@
+nav .nav-items.show {
+  display: flex !important;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.3s;
+}
+
+/* navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+  z-index: 1000;
+  gap: 2em;
+  background-color: transparent;
+}
+
+nav .logo {
+  padding: 0.5em 0.65em;
+  background-color: var(--fg);
+  flex-shrink: 0;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+nav .logo a {
+  color: var(--bg);
+  user-select: none;
+}
+
+nav .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  flex: 1;
+}
+
+nav .nav-item {
+  position: relative;
+  border-radius: 0.4em;
+  background-color: var(--bg);
+  padding: 0.34em 0.55em 0.45em 0.55em;
+}
+
+nav .nav-item p {
+  font-size: 1rem;
+  user-select: none;
+  margin: 0;
+}
+
+nav .nav-item a {
+  display: block;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+/* On screens below 700px, hide Get Started and LifePlus (logo), and adapt nav layout */
+@media (max-width: 700px) {
+
+  nav .nav-item.get-started,
+  nav .logo {
+    display: none !important;
+  }
+
+  nav {
+    padding: 1em;
+    gap: 1em;
+  }
+
+  nav .nav-items {
+    gap: 0.8em;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav .menu-toggle-btn {
+    display: none !important;
+  }
+}
+
+nav .nav-item.active {
+  background-color: var(--fg);
+}
+
+nav .nav-item.active a {
+  color: var(--bg);
+}
+
+nav .menu-toggle-btn {
+  padding: 0.34em 0.55em 0.45em 0.55em;
+  background-color: var(--bg2);
+  color: var(--fg);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.4em;
+  cursor: pointer;
+}
+
+nav .menu-toggle-btn.menu-open {
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+nav .menu-toggle-btn p {
+  user-select: none;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+nav .menu-toggle-btn-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  height: 1.3rem;
+}
+
+/* nav - overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--bg2);
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-overlay .nav-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: center;
+  gap: 1.5em;
+}
+
+.nav-overlay .nav-footer .nav-footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.nav-overlay .nav-footer .nav-footer-item p {
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.nav-overlay .nav-footer .nav-footer-item .nav-footer-item-header {
+  position: relative;
+  transform: translateY(100%);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+
+.nav-overlay .nav-footer .nav-footer-item .nav-footer-item-header p {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: 0.3em 0.7em;
+  border-radius: 0.25em;
+  text-align: center;
+  font-size: 1.1rem;
+  width: max-content;
+}
+
+.nav-overlay .nav-footer .nav-footer-item .nav-footer-item-copy p {
+  font-size: 1rem;
+}
+
+.nav-overlay .nav-footer .nav-footer-item .nav-footer-item-copy {
+  position: relative;
+  transform: translateY(100%);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.75em;
+}
+
+.nav-overlay .nav-footer-item:nth-child(1) .nav-footer-item-header {
+  justify-content: flex-start;
+}
+
+.nav-overlay .nav-footer-item:nth-child(3) .nav-footer-item-header {
+  justify-content: flex-end;
+}
+
+.nav-overlay .nav-footer .nav-footer-item:last-child {
+  margin-top: 1em;
+}
